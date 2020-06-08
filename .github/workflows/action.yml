@@ -73,7 +73,7 @@ jobs:
 
       - name: end_to_end_testing
         run: |
-          sleep 30
+          sleep 60
           curl -IS localhost:5000
           
   Deploy_prod:
