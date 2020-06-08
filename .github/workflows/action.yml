@@ -69,7 +69,7 @@ jobs:
         continue-on-error: true
       
       - name: run project
-        run: docker run -d --rm --name $PROJECT_NAME -p 5000:5000 ${{ secrets.USERNAME }}/$PROJECT_NAME:ver$GITHUB_RUN_NUMBER
+        run: docker run -d --rm --name $PROJECT_NAME -p 5000:5000 ${{ secrets.USERNAME }}/$PROJECT_NAME:ver_$GITHUB_RUN_NUMBER
 
       - name: end_to_end_testing
         run: |
@@ -86,5 +86,5 @@ jobs:
         continue-on-error: true
       
       - name: run project
-        run: docker run -d --rm --name $PROJECT_NAME -p 5000:5000 ${{ secrets.USERNAME }}/$PROJECT_NAME:ver$GITHUB_RUN_NUMBER
+        run: docker run -d --rm --name $PROJECT_NAME -p 5000:5000 ${{ secrets.USERNAME }}/$PROJECT_NAME:ver_$GITHUB_RUN_NUMBER
     
