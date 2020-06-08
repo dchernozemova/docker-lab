@@ -78,7 +78,7 @@ jobs:
           
           
   Deploy_prod:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs: [CD]
     timeout-minutes: 4
     steps:
