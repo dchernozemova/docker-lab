@@ -76,6 +76,7 @@ jobs:
           sleep 240
           curl -IS localhost:5000
           
+          
   Deploy_prod:
     runs-on: ubuntu-latest
     needs: [CD]
