@@ -61,7 +61,7 @@ jobs:
         docker push ${{ secrets.USERNAME }}/$PROJECT_NAME:ver_$GITHUB_RUN_NUMBER
 
   CD:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [CI]
     steps:
       - name: kill old docker
@@ -73,12 +73,12 @@ jobs:
 
       - name: end_to_end_testing
         run: |
-          sleep 240
+          sleep 30
           curl -IS localhost:5000
           
           
   Deploy_prod:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [CD]
     timeout-minutes: 4
     steps:
